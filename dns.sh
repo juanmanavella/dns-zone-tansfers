@@ -68,4 +68,7 @@ done < $WORKING_DIR/$LOCAL_DOMAINS_LIST
 # Cleanup
 rm -fr $WORKING_DIR/tmp
 
+# Delete all unsuccesful transfer files from root-servers:
+find ${WORKING_DIR}/success/ -size 481c -delete
+
 exit 0
