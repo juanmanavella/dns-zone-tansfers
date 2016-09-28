@@ -51,7 +51,7 @@ mkdir -p $WORKING_DIR/tmp
 while read t; 
 	
 do 
- echo "Getting $t Name Servers"
+ echo "Getting $t Name Servers adn querying for AXFR"
  dig +noall +answer $t ns @$SERVER | awk '{print $NF}' > "${WORKING_DIR}/ns/${t}.tld.ns"
  
   while read n
@@ -68,7 +68,7 @@ done < $WORKING_DIR/$LOCAL_DOMAINS_LIST
 # Cleanup
 rm -fr $WORKING_DIR/tmp
 
-# Delete all unsuccesful transfer files from root-servers:
+# Delete all unsuccesful transfer files populated from root-servers:
 find ${WORKING_DIR}/success/ -size 481c -delete
 
 exit 0
