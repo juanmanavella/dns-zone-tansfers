@@ -1,3 +1,6 @@
+AXFR Scrapper
+=============
+
 This script takes a domain or top level domain list as an argument and then, 
 tries to get full domain zones using zone transfers by querying each of its DNS.
 
