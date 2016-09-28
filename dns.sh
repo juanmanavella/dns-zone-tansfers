@@ -51,7 +51,7 @@ mkdir -p $WORKING_DIR/tmp
 while read t; 
 	
 do 
- echo "Getting $t Name Servers adn querying for AXFR"
+ echo "Getting $t Name Servers and querying for AXFR"
  dig +noall +answer $t ns @$SERVER | awk '{print $NF}' > "${WORKING_DIR}/ns/${t}.tld.ns"
  
   while read n
